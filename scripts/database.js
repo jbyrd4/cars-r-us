@@ -23,6 +23,11 @@ const database = {
         {id: 3, pacakge: 'Visibility Package', price: 800},
         {id: 4, pacakge: 'Ultra Package', price: 1500}
     ],
+    carTypes: [
+        {id: 1, type: "Car", multiplier: 1},
+        {id: 2, type: "SUV", multiplier: 1.5},
+        {id: 3, type: "Truck", multiplier: 2.25}
+    ],
     carOrders: [],
     newOrder: {}
 }
@@ -47,6 +52,10 @@ export const getOrders = () => {
     return database.carOrders.map((order) => ({...order}))
 }
 
+export const getCarTypes = () => {
+    return database.carTypes.map((type) => ({...type}))
+}
+
 export const setPaint = (id) => {
     database.newOrder.paintId = id
 }
@@ -61,6 +70,10 @@ export const setWheels = (id) => {
 
 export const setTech = (id) => {
     database.newOrder.techId = id
+}
+
+export const setCarType = (id) => {
+    database.newOrder.typeId = id
 }
 
 export const newCustomOrder = () => {

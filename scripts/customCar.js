@@ -4,36 +4,40 @@ import { interiorList } from "./interior.js"
 import { techList } from "./tech.js"
 import { newCustomOrder } from "./database.js"
 import { Orders } from "./orders.js"
+import { carTypes } from "./CarType.js"
 
 
 export const customCar = () => {
     return `
     <h1>Cars 'R Us: Personal Car Builder</h1>
-    <section>
-        <article>    
+    <section class="boxes">
+        <article class="selections">    
             <h2><label for="paints">Paint Colors</label></h2>
             <select name="paints" id="paints">
             ${paintList()}
             </select>
         </article>
-        <article>
+        <article class="selections">
             <h2><label for="interior">Interior</label></h2>
             <select name="interior" id="interior">
             ${interiorList()}
             </select>
         </article>
-        <article>
+        <article class="selections">
             <h2><label for="wheels">Wheels</label></h2>    
             <select name="wheels" id="wheels">
             ${wheelList()}
             </select>
         </article> 
-        <article>
-            <h2><label for="tech">Technologies</label></h2>
-            <select name="tech" id="tech">
-            ${techList()}
-            </select>
+        <article class="selections">
+        <h2><label for="tech">Technologies</label></h2>
+        <select name="tech" id="tech">
+        ${techList()}
+        </select>
         </article>
+    </section>
+    <section">
+        <div class="carSelection">${carTypes()}</div>
     </section>
     <br>
     <section>
